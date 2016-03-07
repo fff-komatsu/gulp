@@ -1,0 +1,10 @@
+h1 {
+    color: #f0f;
+    font-size: 10px;
+    &:hover {
+        color: #000;
+        font-size: 15px;
+        transform: translate(10px,0);
+        opacity: 0.5;
+    }
+}
