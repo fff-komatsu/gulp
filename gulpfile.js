@@ -125,19 +125,19 @@ gulp.task('sassSP', function() {
 //    coffee compile
 //============================================================
 
-// gulp.task('coffee', function() {
-//   gulp.src(dir.dev + dir.js + "*.coffee")
-//   .pipe(plumber())
-//   .pipe(coffee())
-//   .pipe(gulp.dest(dir.dev + dir.js));
-// });
+gulp.task('coffee', function() {
+  gulp.src(dir.dev + dir.js + "*.coffee")
+  .pipe(plumber())
+  .pipe(coffee())
+  .pipe(gulp.dest(dir.dev + dir.js));
+});
 
-// gulp.task('coffeeSP', function() {
-//   gulp.src(dir.dev + dir.spjs + "*.coffee")
-//   .pipe(plumber())
-//   .pipe(coffee())
-//   .pipe(gulp.dest(dir.dev + dir.spjs));
-// });
+gulp.task('coffeeSP', function() {
+  gulp.src(dir.dev + dir.spjs + "*.coffee")
+  .pipe(plumber())
+  .pipe(coffee())
+  .pipe(gulp.dest(dir.dev + dir.spjs));
+});
 
 //============================================================
 //      style guide PC
@@ -270,6 +270,39 @@ gulp.task('iconfont', function(){
 
 
 //============================================================
+//  min js
+//============================================================
+gulp.task("min_js", function() {
+  gulp.src([dir.dev + dir.js + '*.js'])
+      .pipe(uglify())
+      .pipe(rename({suffix: '.min'}))
+      .pipe(gulp.dest(dir.dev + dir.js + 'min/'));
+});
+
+//============================================================
+//  min sass
+//============================================================
+
+gulp.task('min_css', ['sass'], function () {
+  gulp.src('./css/*.css')
+    .pipe(uglify())
+    .pipe(css())
+    .pipe(rename({suffix: '.min'}))
+    .pipe(gulp.dest('./css/min'));
+});
+
+//============================================================
+//  min image
+//============================================================
+gulp.task("min_image", function() {
+    gulp.src("./image/*")
+    .pipe(uglify())
+    .pipe(image())
+    .pipe(gulp.dest("./image/min"));
+});
+
+
+//============================================================
 //  watch
 //============================================================
 
@@ -299,7 +332,7 @@ gulp.task('watchSP', ['sassSP'], function(){
 gulp.task('default',['watch','webserver','sprite','iconfont']);
 
 //PC
-gulp.task('pc',['haml','watchPC','webserver']);
+gulp.task('pc',['watchPC','webserver']);
 
 //SP
 gulp.task('sp',['hamlSP','watchSP','webserverSP']);

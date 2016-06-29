@@ -1,0 +1,40 @@
+@charset "utf-8";
+
+/*!
+	Site Name: Minnano norimono news
+	Description: layout settings
+	Version: 1.0.0
+	Author: ajike
+*/
+
+@import "elements/_variables.css.scss";
+@import "elements/_mixins.css.scss";
+@import "elements/_reset.css.scss";
+@import "elements/_sprite";
+@import "elements/_base.css.scss";
+@import "elements/_header.css.scss";
+@import "elements/_footer.css.scss";
+@import "elements/_buttons.css.scss";
+@import "elements/_tags.css.scss";
+@import "elements/_modal.css.scss";
+@import "elements/_slide.css.scss";
+@import "elements/_layout.css.scss";
+@import "elements/_forms.css.scss";
+@import "elements/_icons.css.scss";
+@import "elements/_utility-modules.css.scss";
+@import "elements/_card.scss";
+@import "elements/_slick.scss";
+@import "elements/_sidebar.css.scss";
+@import "elements/_common.scss";
+@import "pages/_pages.scss";
+@import 'elements/pager';
+@import 'elements/follow_button';
+@import 'elements/tag_follow_button';
+@import 'elements/tab_menu';
+@import 'elements/relation_tag';
+
+@import "developer/_komatsu.scss";
+@import "developer/_kubota.scss";
+@import "developer/_takei.scss";
+@import "developer/_yokota.scss";
+@import "developer/_matsui.scss";

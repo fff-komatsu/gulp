@@ -1,0 +1,58 @@
+@font-face {
+  font-family: "<%= fontName %>";
+  src: url('<%= fontPath %><%= fontName %>.eot');
+  src: url('<%= fontPath %><%= fontName %>.eot?#iefix') format('eot'),
+    url('<%= fontPath %><%= fontName %>.woff') format('woff'),
+    url('<%= fontPath %><%= fontName %>.ttf') format('truetype'),
+    url('<%= fontPath %><%= fontName %>.svg#<%= fontName %>') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.<%= className %>:before {
+  display: inline-block;
+  font-family: "<%= fontName %>";
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.<%= className %>-lg {
+  font-size: 1.3333333333333333em;
+  line-height: 0.75em;
+  vertical-align: -15%;
+}
+.<%= className %>-0_3x { font-size: 0.3em; }
+.<%= className %>-0_4x { font-size: 0.4em; }
+.<%= className %>-0_5x { font-size: 0.5em; }
+.<%= className %>-0_6x { font-size: 0.6em; }
+.<%= className %>-0_7x { font-size: 0.7em; }
+.<%= className %>-0_8x { font-size: 0.8em; }
+.<%= className %>-0_9x { font-size: 0.9em; }
+.<%= className %>-1_1x { font-size: 1.1em; }
+.<%= className %>-1_2x { font-size: 1.2em; }
+.<%= className %>-1_3x { font-size: 1.3em; }
+.<%= className %>-1_4x { font-size: 1.4em; }
+.<%= className %>-1_5x { font-size: 1.5em; }
+.<%= className %>-1_6x { font-size: 1.6em; }
+.<%= className %>-1_7x { font-size: 1.7em; }
+.<%= className %>-1_8x { font-size: 1.8em; }
+.<%= className %>-1_9x { font-size: 1.9em; }
+.<%= className %>-2_1x { font-size: 2.1em; }
+.<%= className %>-2_2x { font-size: 2.2em; }
+.<%= className %>-2_3x { font-size: 2.3em; }
+.<%= className %>-2_4x { font-size: 2.4em; }
+.<%= className %>-2_5x { font-size: 2.5em; }
+.<%= className %>-2_6x { font-size: 2.6em; }
+.<%= className %>-2_7x { font-size: 2.7em; }
+.<%= className %>-2_8x { font-size: 2.8em; }
+.<%= className %>-2_9x { font-size: 2.9em; }
+.<%= className %>-fw {
+  width: 1.2857142857142858em;
+  text-align: center;
+}
+
+<% _.each(glyphs, function(glyph) { %>.<%= className %>-<%= glyph.name %>:before { content: "\<%= glyph.codepoint.toString(16).toUpperCase() %>" }
+<% }); %>
